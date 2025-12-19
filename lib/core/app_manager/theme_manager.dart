@@ -33,11 +33,35 @@ ThemeData getThemeMode() {
     ),
     //button theme
     buttonTheme: ButtonThemeData(
-      buttonColor: ColosManager.primaryColor,
+      shape: const StadiumBorder(),
       disabledColor: ColosManager.grey1,
+      buttonColor: ColosManager.primaryColor,
+      splashColor: ColosManager.lightPrimary,
+    ),
+    //elevated button theme
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        textStyle: getRegularStyle(FontSize.s17, ColosManager.white),
+        backgroundColor: ColosManager.primaryColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppSize.s12),
+        ),
+      ),
     ),
     //input decoration theme
 
     //text theme
+    textTheme: TextTheme(
+    
+      displayLarge:
+          getSemiBoldStyle(FontSize.s16, ColosManager.darkGrey),  
+      headlineLarge:
+          getSemiBoldStyle(FontSize.s16, ColosManager.darkGrey),
+      headlineMedium:
+          getRegularStyle(FontSize.s14, ColosManager.darkGrey),
+      titleMedium: getMediumStyle(FontSize.s16, ColosManager.primaryColor),
+      bodyLarge: getRegularStyle(FontSize.s14, ColosManager.grey),
+      bodyMedium: getRegularStyle(FontSize.s12, ColosManager.grey1),
+    ),
   );
 }

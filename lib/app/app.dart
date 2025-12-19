@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../core/app_manager/theme_manager.dart';
 
 class MyApp extends StatefulWidget {
-  MyApp._internal();
+  const MyApp._internal();
 
   static final MyApp instance = MyApp._internal();
 
