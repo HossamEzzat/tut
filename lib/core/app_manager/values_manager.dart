@@ -19,6 +19,7 @@ class AppPadding {
 }
 
 class AppSize {
+  static const s1_5 = 1.5;
   static const s4 = 4.0;
   static const s8 = 8.0;
   static const s12 = 12.0;

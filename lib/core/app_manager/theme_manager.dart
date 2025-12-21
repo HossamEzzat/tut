@@ -48,20 +48,44 @@ ThemeData getThemeMode() {
         ),
       ),
     ),
-    //input decoration theme
 
     //text theme
     textTheme: TextTheme(
-    
-      displayLarge:
-          getSemiBoldStyle(FontSize.s16, ColosManager.darkGrey),  
-      headlineLarge:
-          getSemiBoldStyle(FontSize.s16, ColosManager.darkGrey),
-      headlineMedium:
-          getRegularStyle(FontSize.s14, ColosManager.darkGrey),
+      displayLarge: getSemiBoldStyle(FontSize.s16, ColosManager.darkGrey),
+      headlineLarge: getSemiBoldStyle(FontSize.s16, ColosManager.darkGrey),
+      headlineMedium: getRegularStyle(FontSize.s14, ColosManager.darkGrey),
       titleMedium: getMediumStyle(FontSize.s16, ColosManager.primaryColor),
       bodyLarge: getRegularStyle(FontSize.s14, ColosManager.grey),
       bodyMedium: getRegularStyle(FontSize.s12, ColosManager.grey1),
+    ),
+    //input decoration theme
+    inputDecorationTheme: InputDecorationTheme(
+      contentPadding: const EdgeInsets.all(AppPadding.p8),
+      hintStyle: getRegularStyle(FontSize.s14, ColosManager.grey1),
+      labelStyle: getMediumStyle(FontSize.s14, ColosManager.darkGrey),
+      errorStyle: getRegularStyle(FontSize.s14, ColosManager.error),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: ColosManager.grey, width: AppSize.s1_5),
+        borderRadius: BorderRadius.circular(AppSize.s8),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: ColosManager.primaryColor,
+          width: AppSize.s1_5,
+        ),
+        borderRadius: BorderRadius.circular(AppSize.s8),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: ColosManager.error, width: AppSize.s1_5),
+        borderRadius: BorderRadius.circular(AppSize.s8),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: ColosManager.primaryColor,
+          width: AppSize.s1_5,
+        ),
+        borderRadius: BorderRadius.circular(AppSize.s8),
+      ),
     ),
   );
 }
