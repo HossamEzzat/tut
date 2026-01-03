@@ -8,41 +8,41 @@ import 'colos_manager.dart';
 ThemeData getThemeMode() {
   return ThemeData(
     //main colors
-    primaryColor: ColosManager.primaryColor,
-    primaryColorDark: ColosManager.darkPrimary,
-    primaryColorLight: ColosManager.lightPrimary,
-    disabledColor: ColosManager.grey1,
-    splashColor: ColosManager.primaryColor,
+    primaryColor: ColorsManager.primaryColor,
+    primaryColorDark: ColorsManager.darkPrimary,
+    primaryColorLight: ColorsManager.lightPrimary,
+    disabledColor: ColorsManager.grey1,
+    splashColor: ColorsManager.primaryColor,
 
     //card view theme
     cardTheme: CardThemeData(
-      color: ColosManager.white,
+      color: ColorsManager.white,
       elevation: AppSize.s4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       margin: const EdgeInsets.all(AppMargin.m16),
-      shadowColor: ColosManager.grey,
+      shadowColor: ColorsManager.grey,
     ),
     //appbar theme
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      backgroundColor: ColosManager.primaryColor,
+      backgroundColor: ColorsManager.primaryColor,
       elevation: AppSize.s4,
-      shadowColor: ColosManager.lightPrimary,
-      iconTheme: IconThemeData(color: ColosManager.white),
-      titleTextStyle: getRegularStyle(FontSize.s16, ColosManager.white),
+      shadowColor: ColorsManager.lightPrimary,
+      iconTheme: IconThemeData(color: ColorsManager.white),
+      titleTextStyle: getRegularStyle(FontSize.s16, ColorsManager.white),
     ),
     //button theme
     buttonTheme: ButtonThemeData(
       shape: const StadiumBorder(),
-      disabledColor: ColosManager.grey1,
-      buttonColor: ColosManager.primaryColor,
-      splashColor: ColosManager.lightPrimary,
+      disabledColor: ColorsManager.grey1,
+      buttonColor: ColorsManager.primaryColor,
+      splashColor: ColorsManager.lightPrimary,
     ),
     //elevated button theme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        textStyle: getRegularStyle(FontSize.s17, ColosManager.white),
-        backgroundColor: ColosManager.primaryColor,
+        textStyle: getRegularStyle(FontSize.s17, ColorsManager.white),
+        backgroundColor: ColorsManager.primaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12),
         ),
@@ -51,37 +51,37 @@ ThemeData getThemeMode() {
 
     //text theme
     textTheme: TextTheme(
-      displayLarge: getSemiBoldStyle(FontSize.s16, ColosManager.darkGrey),
-      headlineLarge: getSemiBoldStyle(FontSize.s16, ColosManager.darkGrey),
-      headlineMedium: getRegularStyle(FontSize.s14, ColosManager.darkGrey),
-      titleMedium: getMediumStyle(FontSize.s16, ColosManager.primaryColor),
-      bodyLarge: getRegularStyle(FontSize.s14, ColosManager.grey),
-      bodyMedium: getRegularStyle(FontSize.s12, ColosManager.grey1),
+      displayLarge: getSemiBoldStyle(FontSize.s16, ColorsManager.darkGrey),
+      headlineLarge: getSemiBoldStyle(FontSize.s16, ColorsManager.darkGrey),
+      headlineMedium: getRegularStyle(FontSize.s14, ColorsManager.darkGrey),
+      titleMedium: getMediumStyle(FontSize.s16, ColorsManager.primaryColor),
+      bodyLarge: getRegularStyle(FontSize.s14, ColorsManager.grey),
+      bodyMedium: getRegularStyle(FontSize.s12, ColorsManager.grey1),
     ),
     //input decoration theme
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(AppPadding.p8),
-      hintStyle: getRegularStyle(FontSize.s14, ColosManager.grey1),
-      labelStyle: getMediumStyle(FontSize.s14, ColosManager.darkGrey),
-      errorStyle: getRegularStyle(FontSize.s14, ColosManager.error),
+      hintStyle: getRegularStyle(FontSize.s14, ColorsManager.grey1),
+      labelStyle: getMediumStyle(FontSize.s14, ColorsManager.darkGrey),
+      errorStyle: getRegularStyle(FontSize.s14, ColorsManager.error),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: ColosManager.grey, width: AppSize.s1_5),
+        borderSide: BorderSide(color: ColorsManager.grey, width: AppSize.s1_5),
         borderRadius: BorderRadius.circular(AppSize.s8),
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColosManager.primaryColor,
+          color: ColorsManager.primaryColor,
           width: AppSize.s1_5,
         ),
         borderRadius: BorderRadius.circular(AppSize.s8),
       ),
       errorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: ColosManager.error, width: AppSize.s1_5),
+        borderSide: BorderSide(color: ColorsManager.error, width: AppSize.s1_5),
         borderRadius: BorderRadius.circular(AppSize.s8),
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColosManager.primaryColor,
+          color: ColorsManager.primaryColor,
           width: AppSize.s1_5,
         ),
         borderRadius: BorderRadius.circular(AppSize.s8),

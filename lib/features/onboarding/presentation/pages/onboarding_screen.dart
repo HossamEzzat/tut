@@ -22,23 +22,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   List<SliderObject> _getSliderData() {
     return [
       SliderObject(
-        title: StringsManager.onBoardingTitle1,
-        subTitle: StringsManager.onBoardingSubTitle1,
+        title: AppStrings.onBoardingTitle1,
+        subTitle: AppStrings.onBoardingSubTitle1,
         image: AssetsManager.onBoardingLogo1,
       ),
       SliderObject(
-        title: StringsManager.onBoardingTitle2,
-        subTitle: StringsManager.onBoardingSubTitle2,
+        title: AppStrings.onBoardingTitle2,
+        subTitle: AppStrings.onBoardingSubTitle2,
         image: AssetsManager.onBoardingLogo2,
       ),
       SliderObject(
-        title: StringsManager.onBoardingTitle3,
-        subTitle: StringsManager.onBoardingSubTitle3,
+        title: AppStrings.onBoardingTitle3,
+        subTitle: AppStrings.onBoardingSubTitle3,
         image: AssetsManager.onBoardingLogo3,
       ),
       SliderObject(
-        title: StringsManager.onBoardingTitle4,
-        subTitle: StringsManager.onBoardingSubTitle4,
+        title: AppStrings.onBoardingTitle4,
+        subTitle: AppStrings.onBoardingSubTitle4,
         image: AssetsManager.onBoardingLogo4,
       ),
     ];
@@ -47,7 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColosManager.white,
+      backgroundColor: ColorsManager.white,
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.white,
@@ -66,7 +66,77 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           return OnBoardingPage(object: _list[index]);
         },
       ),
+      bottomSheet: Container(
+        height: AppSize.s100,
+        color: ColorsManager.white,
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  AppStrings.skip,
+                  textAlign: TextAlign.end,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ),
+            ),
+            Container(
+              color: ColorsManager.darkPrimary,
+              child: _bottomSheetWidget(),
+            ),
+          ],
+        ),
+      ),
     );
+  }
+
+  Widget _bottomSheetWidget() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(AppPadding.p12),
+          child: GestureDetector(
+            onTap: () {},
+            child: SizedBox(
+              height: AppSize.s20,
+              width: AppSize.s20,
+              child: SvgPicture.asset(AssetsManager.leftArrow),
+            ),
+          ),
+        ),
+        Row(
+          children: [
+            for (int i = 0; i < _list.length; i++)
+              Padding(
+                padding: EdgeInsets.all(AppPadding.p8),
+                child: getPropperCircular(i),
+              ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.all(AppPadding.p12),
+          child: GestureDetector(
+            onTap: () {},
+            child: SizedBox(
+              height: AppSize.s20,
+              width: AppSize.s20,
+              child: SvgPicture.asset(AssetsManager.rightArrow),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget getPropperCircular(int index) {
+    if (currentIndex == index) {
+      return SvgPicture.asset(AssetsManager.solidCircular);
+    } else {
+      return SvgPicture.asset(AssetsManager.hollowCircle);
+    }
   }
 }
 
@@ -89,7 +159,6 @@ class OnBoardingPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        SizedBox(height: AppMargin.m20),
         Padding(
           padding: const EdgeInsets.all(AppPadding.p8),
           child: Text(
@@ -98,7 +167,6 @@ class OnBoardingPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        SizedBox(height: AppMargin.m20),
         SvgPicture.asset(object.image),
       ],
     );

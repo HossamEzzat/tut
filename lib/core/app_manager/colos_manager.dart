@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-class ColosManager {
+class ColorsManager {
   static final primaryColor = Color(0xffED9728);
   static final darkGrey = Color(0xff525252);
   static final grey = Color(0xff737477);
