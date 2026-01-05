@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tut/core/app_manager/colos_manager.dart';
+import 'package:tut/core/app_manager/routes_manager.dart';
 import 'package:tut/core/app_manager/strings_manager.dart';
 import 'package:tut/core/app_manager/values_manager.dart';
 
 import '../../../../core/app_manager/assest_manager.dart';
+import '../../../../core/app_manager/constants_manager.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -49,6 +51,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Scaffold(
       backgroundColor: ColorsManager.white,
       appBar: AppBar(
+        backgroundColor: ColorsManager.white,
+        elevation: AppSize.s0,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.white,
           statusBarBrightness: Brightness.dark,
@@ -67,14 +71,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         },
       ),
       bottomSheet: Container(
-        height: AppSize.s100,
         color: ColorsManager.white,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(
+                    context,
+                    RoutesManager.loginRoute,
+                  );
+                },
                 child: Text(
                   AppStrings.skip,
                   textAlign: TextAlign.end,
@@ -99,7 +108,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         Padding(
           padding: const EdgeInsets.all(AppPadding.p12),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              pageController.previousPage(
+                duration: const Duration(
+                  milliseconds: ConstantsManager.sliderDelay,
+                ),
+                curve: Curves.easeInOut,
+              );
+            },
             child: SizedBox(
               height: AppSize.s20,
               width: AppSize.s20,
@@ -119,7 +135,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         Padding(
           padding: const EdgeInsets.all(AppPadding.p12),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              pageController.nextPage(
+                duration: const Duration(
+                  milliseconds: ConstantsManager.sliderDelay,
+                ),
+                curve: Curves.easeInOut,
+              );
+            },
             child: SizedBox(
               height: AppSize.s20,
               width: AppSize.s20,
