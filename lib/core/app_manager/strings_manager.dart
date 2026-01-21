@@ -13,4 +13,7 @@ class AppStrings {
   static const String onBoardingSubTitle4 =
       "Tut app is an awesome application using clean architecture #4";
   static const String skip = "SKIP";
+  static const String details = "Details";
+  static const String services = "Services";
+  static const String about = "About Store";
 }

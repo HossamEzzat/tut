@@ -1,13 +1,14 @@
-abstract class BaseViewModel {}
+abstract class BaseViewModel extends BaseViewModelInputs
+    implements BaseViewModelOutputs {
+  // shared variables and function that will be used through any view model.
+}
 
 abstract class BaseViewModelInputs {
-  void start();
+  void start(); // start view model job
 
-  void dispose();
+  void dispose(); // will be called when view model is dead
 }
 
 abstract class BaseViewModelOutputs {
-  void start();
-
-  void dispose();
+  // will be implemented in the future
 }
